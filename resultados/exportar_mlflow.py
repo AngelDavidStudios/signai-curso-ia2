@@ -84,7 +84,7 @@ def exportar(base: Path, destino: Path) -> tuple[int, int]:
 
 def _escribir(ruta: Path, filas: list[dict]) -> None:
     with ruta.open("w", newline="", encoding="utf-8") as archivo:
-        escritor = csv.DictWriter(archivo, fieldnames=list(filas[0]))
+        escritor = csv.DictWriter(archivo, fieldnames=list(filas[0]), lineterminator="\n")
         escritor.writeheader()
         escritor.writerows(filas)
 

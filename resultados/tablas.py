@@ -72,7 +72,7 @@ def agregar() -> tuple[list[dict], dict[str, dict]]:
 
 def escribir(nombre: str, filas: list[dict]) -> None:
     with (AQUI / nombre).open("w", newline="", encoding="utf-8") as archivo:
-        escritor = csv.DictWriter(archivo, fieldnames=list(filas[0]))
+        escritor = csv.DictWriter(archivo, fieldnames=list(filas[0]), lineterminator="\n")
         escritor.writeheader()
         escritor.writerows(filas)
 
