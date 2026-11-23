@@ -33,7 +33,7 @@ y la exportación a Core ML. También incluye las métricas exportadas de todos 
 - Para la copia entre rondas: restic ≥ 0.19 (`brew install restic`).
 
 ```sh
-git clone https://github.com/angeldev-studios/signai-curso-ia2.git
+git clone https://github.com/AngelDavidStudios/signai-curso-ia2.git
 cd signai-curso-ia2
 uv sync                       # Python 3.13, PyTorch 2.7.0, coremltools 9.0, MLflow 3.16 y DVC 3.67 (uv.lock)
 uv run pytest                 # 812 pruebas, unos 2 minutos
