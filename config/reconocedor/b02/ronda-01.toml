@@ -1,0 +1,50 @@
+# Ronda 1 de b02, generada por `signai-reconocedor automatico` (TT-22 research R-07: línea base de la versión 1 y aumentos, 60 épocas).
+barrido = "b02"
+ronda = 1
+
+[base.forma]
+capas = 4
+dimension = 98
+cabezas = 7
+intermedia = 256
+
+[base.entrenamiento]
+optimizador = "adamw"
+tasa = 0.001
+programacion = "coseno"
+regularizacion = 0.05
+dropout = 0.2
+recorte_gradiente = 1.0
+lote = 32
+suavizado_etiquetas = 0.0
+epocas = 60
+
+[[configuracion]]
+nombre = "r01-linea-base"
+
+[[configuracion]]
+nombre = "r01-espacial"
+aumento.desplazamiento = { probabilidad = 0.5, intensidad = 0.05 }
+aumento.escala = { probabilidad = 0.5, intensidad = 0.1 }
+
+[[configuracion]]
+nombre = "r01-rotacion"
+aumento.rotacion = { probabilidad = 0.5, intensidad = 0.15 }
+
+[[configuracion]]
+nombre = "r01-temporal"
+aumento.velocidad = { probabilidad = 0.5, intensidad = 0.2 }
+aumento.recorte_temporal = { probabilidad = 0.5, intensidad = 0.7 }
+
+[[configuracion]]
+nombre = "r01-ocultacion"
+aumento.ocultacion = { probabilidad = 0.3, intensidad = 0.1 }
+
+[[configuracion]]
+nombre = "r01-todo"
+aumento.desplazamiento = { probabilidad = 0.5, intensidad = 0.05 }
+aumento.escala = { probabilidad = 0.5, intensidad = 0.1 }
+aumento.rotacion = { probabilidad = 0.5, intensidad = 0.15 }
+aumento.ocultacion = { probabilidad = 0.3, intensidad = 0.1 }
+aumento.velocidad = { probabilidad = 0.5, intensidad = 0.2 }
+aumento.recorte_temporal = { probabilidad = 0.5, intensidad = 0.7 }

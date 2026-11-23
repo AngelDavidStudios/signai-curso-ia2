@@ -1,0 +1,44 @@
+# Ronda 2 de b01, generada por `signai-reconocedor automatico` a partir de r01-dropout-0p2 (la mejor configuración elegible).
+barrido = "b01"
+ronda = 2
+
+[base.forma]
+capas = 4
+dimension = 98
+cabezas = 7
+intermedia = 256
+
+[base.entrenamiento]
+optimizador = "adamw"
+tasa = 0.001
+programacion = "coseno"
+regularizacion = 0.05
+dropout = 0.2
+recorte_gradiente = 1.0
+lote = 32
+epocas = 60
+suavizado_etiquetas = 0.0
+
+[[configuracion]]
+nombre = "r02-tasa-0p0005"
+entrenamiento = { tasa = 0.0005 }
+
+[[configuracion]]
+nombre = "r02-tasa-0p002"
+entrenamiento = { tasa = 0.002 }
+
+[[configuracion]]
+nombre = "r02-dropout-0p1"
+entrenamiento = { dropout = 0.1 }
+
+[[configuracion]]
+nombre = "r02-dropout-0p3"
+entrenamiento = { dropout = 0.3 }
+
+[[configuracion]]
+nombre = "r02-regularizacion-0p01"
+entrenamiento = { regularizacion = 0.01 }
+
+[[configuracion]]
+nombre = "r02-regularizacion-0p1"
+entrenamiento = { regularizacion = 0.1 }

@@ -1,0 +1,44 @@
+# Ronda 1 de b01, generada por `signai-reconocedor automatico` (base de research R-07 con 60 épocas).
+barrido = "b01"
+ronda = 1
+
+[base.forma]
+capas = 4
+dimension = 98
+cabezas = 7
+intermedia = 256
+
+[base.entrenamiento]
+optimizador = "adamw"
+tasa = 0.001
+programacion = "coseno"
+regularizacion = 0.05
+dropout = 0.05
+recorte_gradiente = 1.0
+lote = 32
+suavizado_etiquetas = 0.0
+epocas = 60
+
+[[configuracion]]
+nombre = "r01-base"
+
+[[configuracion]]
+nombre = "r01-dropout-0p2"
+entrenamiento = { dropout = 0.2 }
+
+[[configuracion]]
+nombre = "r01-tasa-0p003"
+entrenamiento = { tasa = 0.003 }
+
+[[configuracion]]
+nombre = "r01-regularizacion-0p1"
+entrenamiento = { regularizacion = 0.1 }
+
+[[configuracion]]
+nombre = "r01-aumento-espacial"
+aumento.desplazamiento = { probabilidad = 0.5, intensidad = 0.05 }
+aumento.escala = { probabilidad = 0.5, intensidad = 0.1 }
+
+[[configuracion]]
+nombre = "r01-recorte-temporal"
+aumento.recorte_temporal = { probabilidad = 0.5, intensidad = 0.7 }

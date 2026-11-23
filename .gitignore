@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+.DS_Store
+.idea/
+.build/
+.swiftpm/
+datos/
+modelos/
+mlruns/

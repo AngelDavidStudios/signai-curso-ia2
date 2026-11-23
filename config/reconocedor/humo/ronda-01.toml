@@ -1,0 +1,24 @@
+# Corrida de humo de TT-14 (quickstart V2, tarea T028): la base de research R-07 con pocas épocas.
+# Barrido propio: nunca se cierra ni da candidato, y no contamina el barrido real (b01).
+barrido = "humo"
+ronda = 1
+
+[base.forma]
+capas = 4
+dimension = 98
+cabezas = 7
+intermedia = 256
+
+[base.entrenamiento]
+optimizador = "adamw"
+tasa = 1e-3
+programacion = "coseno"
+regularizacion = 0.05
+dropout = 0.05
+recorte_gradiente = 1.0
+lote = 32
+epocas = 5
+suavizado_etiquetas = 0.0
+
+[[configuracion]]
+nombre = "humo"

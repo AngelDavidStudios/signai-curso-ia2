@@ -1,0 +1,76 @@
+# Ronda 5 de b02, generada por `signai-reconocedor automatico` a partir de r04-intermedia-128 (la mejor configuración elegible).
+barrido = "b02"
+ronda = 5
+
+[base.forma]
+capas = 4
+dimension = 98
+cabezas = 7
+intermedia = 128
+
+[base.entrenamiento]
+optimizador = "adamw"
+tasa = 0.001
+programacion = "coseno"
+regularizacion = 0.05
+dropout = 0.1
+recorte_gradiente = 1.0
+lote = 32
+epocas = 100
+suavizado_etiquetas = 0.0
+
+[[configuracion]]
+nombre = "r05-sin-ocultacion"
+aumento.desplazamiento = { probabilidad = 0.5, intensidad = 0.05 }
+aumento.escala = { probabilidad = 0.5, intensidad = 0.1 }
+aumento.rotacion = { probabilidad = 0.5, intensidad = 0.15 }
+aumento.velocidad = { probabilidad = 0.5, intensidad = 0.2 }
+aumento.recorte_temporal = { probabilidad = 0.5, intensidad = 0.7 }
+
+[[configuracion]]
+nombre = "r05-dimension-64"
+forma = { dimension = 64, cabezas = 8 }
+aumento.desplazamiento = { probabilidad = 0.5, intensidad = 0.05 }
+aumento.escala = { probabilidad = 0.5, intensidad = 0.1 }
+aumento.rotacion = { probabilidad = 0.5, intensidad = 0.15 }
+aumento.ocultacion = { probabilidad = 0.3, intensidad = 0.1 }
+aumento.velocidad = { probabilidad = 0.5, intensidad = 0.2 }
+aumento.recorte_temporal = { probabilidad = 0.5, intensidad = 0.7 }
+
+[[configuracion]]
+nombre = "r05-dimension-128"
+forma = { dimension = 128, cabezas = 8 }
+aumento.desplazamiento = { probabilidad = 0.5, intensidad = 0.05 }
+aumento.escala = { probabilidad = 0.5, intensidad = 0.1 }
+aumento.rotacion = { probabilidad = 0.5, intensidad = 0.15 }
+aumento.ocultacion = { probabilidad = 0.3, intensidad = 0.1 }
+aumento.velocidad = { probabilidad = 0.5, intensidad = 0.2 }
+aumento.recorte_temporal = { probabilidad = 0.5, intensidad = 0.7 }
+
+[[configuracion]]
+nombre = "r05-sin-velocidad"
+aumento.desplazamiento = { probabilidad = 0.5, intensidad = 0.05 }
+aumento.escala = { probabilidad = 0.5, intensidad = 0.1 }
+aumento.rotacion = { probabilidad = 0.5, intensidad = 0.15 }
+aumento.ocultacion = { probabilidad = 0.3, intensidad = 0.1 }
+aumento.recorte_temporal = { probabilidad = 0.5, intensidad = 0.7 }
+
+[[configuracion]]
+nombre = "r05-lote-16"
+entrenamiento = { lote = 16 }
+aumento.desplazamiento = { probabilidad = 0.5, intensidad = 0.05 }
+aumento.escala = { probabilidad = 0.5, intensidad = 0.1 }
+aumento.rotacion = { probabilidad = 0.5, intensidad = 0.15 }
+aumento.ocultacion = { probabilidad = 0.3, intensidad = 0.1 }
+aumento.velocidad = { probabilidad = 0.5, intensidad = 0.2 }
+aumento.recorte_temporal = { probabilidad = 0.5, intensidad = 0.7 }
+
+[[configuracion]]
+nombre = "r05-lote-64"
+entrenamiento = { lote = 64 }
+aumento.desplazamiento = { probabilidad = 0.5, intensidad = 0.05 }
+aumento.escala = { probabilidad = 0.5, intensidad = 0.1 }
+aumento.rotacion = { probabilidad = 0.5, intensidad = 0.15 }
+aumento.ocultacion = { probabilidad = 0.3, intensidad = 0.1 }
+aumento.velocidad = { probabilidad = 0.5, intensidad = 0.2 }
+aumento.recorte_temporal = { probabilidad = 0.5, intensidad = 0.7 }

@@ -1,0 +1,44 @@
+# Ronda 3 de b01, generada por `signai-reconocedor automatico` a partir de r01-dropout-0p2 (la mejor configuración elegible).
+barrido = "b01"
+ronda = 3
+
+[base.forma]
+capas = 4
+dimension = 98
+cabezas = 7
+intermedia = 256
+
+[base.entrenamiento]
+optimizador = "adamw"
+tasa = 0.001
+programacion = "coseno"
+regularizacion = 0.05
+dropout = 0.2
+recorte_gradiente = 1.0
+lote = 32
+epocas = 60
+suavizado_etiquetas = 0.0
+
+[[configuracion]]
+nombre = "r03-con-desplazamiento"
+aumento.desplazamiento = { probabilidad = 0.5, intensidad = 0.05 }
+
+[[configuracion]]
+nombre = "r03-capas-3"
+forma = { capas = 3 }
+
+[[configuracion]]
+nombre = "r03-capas-5"
+forma = { capas = 5 }
+
+[[configuracion]]
+nombre = "r03-con-escala"
+aumento.escala = { probabilidad = 0.5, intensidad = 0.1 }
+
+[[configuracion]]
+nombre = "r03-epocas-100"
+entrenamiento = { epocas = 100 }
+
+[[configuracion]]
+nombre = "r03-con-recorte-temporal"
+aumento.recorte_temporal = { probabilidad = 0.5, intensidad = 0.7 }

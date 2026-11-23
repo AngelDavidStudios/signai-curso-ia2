@@ -1,0 +1,74 @@
+# Ronda 8 de b02, generada por `signai-reconocedor automatico` a partir de r07-dropout-0p2 (la mejor configuración elegible).
+barrido = "b02"
+ronda = 8
+
+[base.forma]
+capas = 4
+dimension = 128
+cabezas = 8
+intermedia = 128
+
+[base.entrenamiento]
+optimizador = "adamw"
+tasa = 0.001
+programacion = "coseno"
+regularizacion = 0.05
+dropout = 0.2
+recorte_gradiente = 1.0
+lote = 32
+epocas = 100
+suavizado_etiquetas = 0.05
+
+[[configuracion]]
+nombre = "r08-sin-desplazamiento"
+aumento.escala = { probabilidad = 0.5, intensidad = 0.1 }
+aumento.rotacion = { probabilidad = 0.5, intensidad = 0.15 }
+aumento.ocultacion = { probabilidad = 0.3, intensidad = 0.1 }
+aumento.velocidad = { probabilidad = 0.5, intensidad = 0.2 }
+aumento.recorte_temporal = { probabilidad = 0.5, intensidad = 0.7 }
+
+[[configuracion]]
+nombre = "r08-sin-rotacion"
+aumento.desplazamiento = { probabilidad = 0.5, intensidad = 0.05 }
+aumento.escala = { probabilidad = 0.5, intensidad = 0.1 }
+aumento.ocultacion = { probabilidad = 0.3, intensidad = 0.1 }
+aumento.velocidad = { probabilidad = 0.5, intensidad = 0.2 }
+aumento.recorte_temporal = { probabilidad = 0.5, intensidad = 0.7 }
+
+[[configuracion]]
+nombre = "r08-capas-3"
+forma = { capas = 3 }
+aumento.desplazamiento = { probabilidad = 0.5, intensidad = 0.05 }
+aumento.escala = { probabilidad = 0.5, intensidad = 0.1 }
+aumento.rotacion = { probabilidad = 0.5, intensidad = 0.15 }
+aumento.ocultacion = { probabilidad = 0.3, intensidad = 0.1 }
+aumento.velocidad = { probabilidad = 0.5, intensidad = 0.2 }
+aumento.recorte_temporal = { probabilidad = 0.5, intensidad = 0.7 }
+
+[[configuracion]]
+nombre = "r08-capas-5"
+forma = { capas = 5 }
+aumento.desplazamiento = { probabilidad = 0.5, intensidad = 0.05 }
+aumento.escala = { probabilidad = 0.5, intensidad = 0.1 }
+aumento.rotacion = { probabilidad = 0.5, intensidad = 0.15 }
+aumento.ocultacion = { probabilidad = 0.3, intensidad = 0.1 }
+aumento.velocidad = { probabilidad = 0.5, intensidad = 0.2 }
+aumento.recorte_temporal = { probabilidad = 0.5, intensidad = 0.7 }
+
+[[configuracion]]
+nombre = "r08-sin-escala"
+aumento.desplazamiento = { probabilidad = 0.5, intensidad = 0.05 }
+aumento.rotacion = { probabilidad = 0.5, intensidad = 0.15 }
+aumento.ocultacion = { probabilidad = 0.3, intensidad = 0.1 }
+aumento.velocidad = { probabilidad = 0.5, intensidad = 0.2 }
+aumento.recorte_temporal = { probabilidad = 0.5, intensidad = 0.7 }
+
+[[configuracion]]
+nombre = "r08-epocas-60"
+entrenamiento = { epocas = 60 }
+aumento.desplazamiento = { probabilidad = 0.5, intensidad = 0.05 }
+aumento.escala = { probabilidad = 0.5, intensidad = 0.1 }
+aumento.rotacion = { probabilidad = 0.5, intensidad = 0.15 }
+aumento.ocultacion = { probabilidad = 0.3, intensidad = 0.1 }
+aumento.velocidad = { probabilidad = 0.5, intensidad = 0.2 }
+aumento.recorte_temporal = { probabilidad = 0.5, intensidad = 0.7 }

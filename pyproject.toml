@@ -1,0 +1,40 @@
+[project]
+name = "signai-ml"
+version = "0.1.0"
+description = "Reconocimiento de 100 señas de la LSEC con KPoseFormer: preprocesamiento, partición por grabación, entrenamiento, evaluación y exportación a Core ML"
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+# Versiones fijadas en research R-01…R-03: coremltools 9.0 solo tiene rueda nativa hasta cp313
+# y está probado con torch hasta 2.7.0 exacto (con 2.7.1 ya avisa).
+dependencies = [
+    "torch==2.7.0",
+    "coremltools==9.0",
+    "mlflow>=3.16,<3.17",
+    "dvc>=3.67,<3.68",
+    "numpy>=2,<3",
+]
+
+[project.scripts]
+signai-copia = "signai_ml.copia.cli:main"
+signai-preproceso = "signai_ml.preproceso.cli:main"
+signai-particion = "signai_ml.particion.cli:main"
+signai-reconocedor = "signai_ml.reconocedor.cli:main"
+signai-aceptacion = "signai_ml.aceptacion.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=9,<10",
+    "pytest-cov>=7,<8",
+    "pyyaml",
+]
+
+[build-system]
+requires = ["uv_build>=0.11,<0.12"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["signai_ml"]
+branch = true
